@@ -1,79 +1,163 @@
-/* Default styles for the document */
-
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.header p {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.left-col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.right-col {
+  flex: 2;
+  padding: 0 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li.highlighted {
+  background-color: #f1c40f;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+h2, h3 {
+  margin-top: 20px;
+}
+
+h3 {
+  font-weight: normal;
+}
+a {
+  color: #0066CC;
+  text-decoration: none;
+}
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    margin: 20px 0;
   }
-  
-  h1, h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 10px;
+
+  .left-col, .right-col {
+    padding: 20px 0;
   }
-  
-  h2 {
-    font-size: 24px;
+
+  .right-col {
+    border-top: 1px solid #ccc;
     margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .header p {
+    font-size: 1em;
+  }
+
+  .main {
+    margin: 10px 0;
+  }
+
+  .left-col, .right-col {
+    padding: 10px 0;
+  }
+
+  ul li {
+    font-size: 0.8em;
+  }
+
+  .tooltip {
+    font-size: 0.6em;
+  }
+
+  .modal-content {
+    max-width: 90%;
   }
   
-  p {
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-  
-  li {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
-  
-  a {
-    color: #0066CC;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Media queries for responsive design */
-  
-  /* For screens that are 600px or wider */
-  @media screen and (min-width: 600px) {
-    h1, h2 {
-      font-size: 36px;
-    }
-  
-    p {
-      font-size: 18px;
-    }
-  
-    li {
-      font-size: 16px;
-    }
-  }
-  
-  /* For screens that are 900px or wider */
-  @media screen and (min-width: 900px) {
-    h1, h2 {
-      font-size: 28px;
-    }
-  
-    p {
-      font-size: 20px;
-    }
-  
-    li {
-      font-size: 18px;
-    }
-  }
-  
+}
