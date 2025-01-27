@@ -120,8 +120,9 @@ p, li {
 
   .left-section, .right-section {
       width: 100%; /* Full width for both sections */
-      padding: 15px; /* Add some spacing */
+      padding: 10px; /* Adjust padding to fit content */
       border: none; /* Remove dividing borders for smaller screens */
+      box-sizing: border-box; /* Ensure padding doesn’t affect width */
   }
 
   .profile img {
@@ -131,18 +132,24 @@ p, li {
 
   h1 {
       font-size: 20px; /* Adjust the font size for mobile */
+      white-space: normal; /* Allow name to wrap if needed */
+      word-break: break-word; /* Break long words if needed */
   }
 
   .highlight {
       font-size: 18px; /* Scale down section titles slightly */
+      word-break: break-word; /* Break long section titles */
   }
 
   ul {
-      padding-left: 20px; /* Maintain proper spacing for lists */
-  }
+      padding-left: 15px; /* Maintain proper spacing for lists */
+      word-wrap: break-word; /* Prevent text overflow */
+      word-break: break-word; /* Ensure long words break */
+    }
 
   .contact, .education, .skills, .certifications, .achievements, .language, .references {
-      margin-bottom: 20px; /* Reduce spacing between sections */
+      margin-bottom: 15px; /* Reduce spacing between sections */
+      overflow-wrap: break-word; /* Ensure content breaks and wraps */
   }
 }
 
@@ -155,17 +162,31 @@ p, li {
 
   h1 {
       font-size: 18px; /* Smaller font size for the name */
+      white-space: normal; /* Allow name to wrap if needed */
+      word-break: break-word; /* Break long words if needed */
   }
 
   .highlight {
       font-size: 16px; /* Adjust section title font size */
+      word-break: break-word; /* Ensure section titles break */
   }
 
   ul {
-      padding-left: 15px; /* Tighter spacing for lists */
+      padding-left: 10px; /* Tighter spacing for lists */
+      word-wrap: break-word; /* Prevent text overflow */
+      word-break: break-word; /* Break long words */
   }
 
   p, li {
       font-size: 13px; /* Reduce font size for text */
+      white-space: normal; /* Ensure long words can break and wrap */
+      word-break: break-word; /* Allow breaking words */
+  }
+
+  .contact, .education, .skills, .certifications, .achievements, .language, .references {
+      margin-bottom: 10px; /* Reduce section spacing further */
+      overflow-wrap: break-word; /* Allow content to wrap */
   }
 }
+
+
