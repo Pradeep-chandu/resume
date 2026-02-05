@@ -3,128 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <meta name="description" content="B. Pradeep Chandu - Senior Node.js Developer with 5+ years of experience">
+    <title>B. Pradeep Chandu - Node.js Developer Resume</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="resume">
-        <!-- Left Section -->
-        <div class="left-section">
-            <div class="profile">
-                <img src="profile.jpg" alt="Profile Picture">
-                <h1>B. Pradeep Chandu</h1>
-                <p class="subtitle">Node.js Developer</p>
-            </div>
-            <div class="contact">
-                <h2 class="highlight" >Contact</h2>
-                <p>Mobile: +91 8522991845</p>
-                <p>Email: bpradeepchandu97@gmail.com</p>
-            </div>
-            <div class="education">
-                <h2 class="highlight">Education</h2>
-                <p>B.TECH in CSE - Dadi Institute of Engineering and Technology (2019) - 66%</p>
-                <p>Intermediate (MPC) - Sri Chaitanya Jr. College (2015) - 81%</p>
-                <p>SSC - DAV Public School (2013) - 80%</p>
-            </div>
-            <div class="language">
-                <h2 class="highlight">Languages</h2>
-                <p>English</p>
-                <p>Telugu</p>
-                <div class="social">
-                    <h2 class="highlight">Social Links</h2>
-                    <p> <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/pradeep-chandu-359023210/" target="_blank">linkedin.com/in/pradeep-chandu-359023210</a></p>
+    <div class="resume-container">
+        <div class="resume">
+            <!-- Left Section -->
+            <aside class="left-section">
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <img src="profile.jpg" alt="B. Pradeep Chandu" class="profile-img">
+                        <div class="profile-overlay"></div>
+                    </div>
+                    <h1 class="profile-name">B. Pradeep Chandu</h1>
+                    <p class="profile-title">Senior Node.js Developer</p>
+                    <div class="experience-badge">
+                        <span class="badge-icon">⚡</span>
+                        <span>5+ Years Experience</span>
+                    </div>
                 </div>
-            </div>
-        </div>
+                
+                <section class="info-section">
+                    <h2 class="section-title">
+                        <span class="title-icon">📞</span>
+                        Contact
+                    </h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <a href="tel:+918522991845" class="contact-link">+91 8522991845</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <a href="mailto:bpradeepchandu97@gmail.com" class="contact-link">bpradeepchandu97@gmail.com</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="info-section">
+                    <h2 class="section-title">
+                        <span class="title-icon">🎓</span>
+                        Education
+                    </h2>
+                    <div class="education-list">
+                        <article class="edu-card">
+                            <h3 class="edu-degree">B.Tech in CSE</h3>
+                            <p class="edu-institution">Dadi Institute of Engineering and Technology</p>
+                            <p class="edu-year">2019 • 66%</p>
+                        </article>
+                        <article class="edu-card">
+                            <h3 class="edu-degree">Intermediate (MPC)</h3>
+                            <p class="edu-institution">Sri Chaitanya Jr. College</p>
+                            <p class="edu-year">2015 • 81%</p>
+                        </article>
+                        <article class="edu-card">
+                            <h3 class="edu-degree">SSC</h3>
+                            <p class="edu-institution">DAV Public School</p>
+                            <p class="edu-year">2013 • 80%</p>
+                        </article>
+                    </div>
+                </section>
+                
+                <section class="info-section">
+                    <h2 class="section-title">
+                        <span class="title-icon">🌐</span>
+                        Languages
+                    </h2>
+                    <div class="language-tags">
+                        <span class="language-tag">English</span>
+                        <span class="language-tag">Telugu</span>
+                    </div>
+                </section>
+                
+                <section class="info-section">
+                    <h2 class="section-title">
+                        <span class="title-icon">🔗</span>
+                        Social
+                    </h2>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/pradeep-chandu-359023210/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <span class="social-icon">💼</span>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                    </div>
+                </section>
+            </aside>
 
-        <!-- Right Section -->
-        <div class="right-section">
-            <div class="section">
-                <h2>Professional Summary</h2>
-                <ul>
-                    <h2> 4+ years of Node js experience </h2>
-                    <li><strong>JavaScript (JS):</strong>
-                        <ul>
-                            <li>Proficient in ES6+ features such as arrow functions, async/await, destructuring, and template literals.</li>
-                            <li>Extensive experience with JavaScript frameworks and libraries, including React, Angular, and Vue.js.</li>
-                            <li>Deep understanding of asynchronous programming, including Promises, Callbacks, and Event Loops.</li>
-                            <li>Experience working with JavaScript's DOM manipulation and event handling for dynamic web applications.</li>
-                            <li>Proficient in building RESTful APIs and handling data operations with JavaScript.</li>
-                            <li>Strong grasp of JavaScript testing frameworks like Jest and Mocha for unit and integration testing.</li>
+            <!-- Right Section -->
+            <main class="right-section">
+                <section class="content-section fade-in">
+                    <h2 class="section-heading">
+                        <span class="heading-line"></span>
+                        <span class="heading-text">Professional Summary</span>
+                    </h2>
+                    <p class="summary-text">
+                        Experienced <strong>Node.js Developer</strong> with <strong>5+ years</strong> of expertise in building scalable, 
+                        high-performance backend systems. Specialized in developing RESTful APIs, microservices architecture, 
+                        and real-time applications for healthcare platforms. Proven track record in optimizing system performance, 
+                        implementing secure authentication systems, and managing large-scale databases.
+                    </p>
+                </section>
+                
+                <section class="content-section fade-in">
+                    <h2 class="section-heading">
+                        <span class="heading-line"></span>
+                        <span class="heading-text">Work Experience</span>
+                    </h2>
+                    
+                    <article class="experience-card">
+                        <header class="exp-header">
+                            <div class="exp-title-group">
+                                <h3 class="exp-position">Senior Node.js Developer</h3>
+                                <p class="exp-company">Maren Solutions Pvt Ltd</p>
+                            </div>
+                            <time class="exp-duration">Feb 2022 - Present</time>
+                        </header>
+                        
+                        <div class="project-highlight">
+                            <div class="project-badge">
+                                <span class="badge-dot"></span>
+                                <span>Featured Project</span>
+                            </div>
+                            <h4 class="project-name">Sanar.sa - Healthcare Platform</h4>
+                            <p class="project-description">
+                                A comprehensive healthcare application connecting patients with healthcare providers across Saudi Arabia.
+                            </p>
+                            
+                            <div class="backend-achievements">
+                                <h5 class="achievements-title">Backend Development & Architecture</h5>
+                                <ul class="achievements-list">
+                                    <li>Architected and developed scalable RESTful APIs using Node.js and Express.js to handle patient-doctor communication, appointment management, and medical record processing</li>
+                                    <li>Implemented secure authentication and authorization system using JWT tokens with role-based access control (RBAC) for patients, doctors, and administrators</li>
+                                    <li>Designed and optimized MongoDB database schemas using Mongoose ODM for user profiles, medical histories, consultation records, and appointment scheduling</li>
+                                    <li>Integrated multiple third-party payment gateways (Stripe, PayPal) for secure transaction processing and subscription management</li>
+                                    <li>Built real-time appointment scheduling system with conflict detection, availability management, and automated reminder notifications</li>
+                                    <li>Developed video consultation module using WebRTC integration for secure telemedicine sessions</li>
+                                    <li>Implemented file upload and management system for medical documents, prescriptions, and diagnostic reports with cloud storage integration</li>
+                                    <li>Created comprehensive API middleware for request validation, error handling, rate limiting, and logging</li>
+                                    <li>Optimized database queries and implemented caching strategies using Redis, reducing API response times by 40%</li>
+                                    <li>Enhanced platform scalability to support over 100,000+ simultaneous users through load balancing and horizontal scaling</li>
+                                    <li>Implemented background job processing using Bull queue for email notifications, SMS alerts, and scheduled tasks</li>
+                                    <li>Developed admin dashboard APIs for analytics, reporting, user management, and system monitoring</li>
+                                    <li>Ensured HIPAA compliance and data security through encryption, secure data transmission, and audit logging</li>
+                                    <li>Integrated with external healthcare systems and medical device APIs for seamless data exchange</li>
+                                    <li>Implemented comprehensive error handling, logging, and monitoring using Winston logger and error tracking tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="experience-card">
+                        <header class="exp-header">
+                            <div class="exp-title-group">
+                                <h3 class="exp-position">Node.js Developer</h3>
+                                <p class="exp-company">Beyond Drops Pvt Ltd</p>
+                            </div>
+                            <time class="exp-duration">July 2021 - Oct 2021</time>
+                        </header>
+                        <ul class="exp-responsibilities">
+                            <li>Developed and maintained RESTful APIs using Node.js and Express.js to support business operations</li>
+                            <li>Designed and optimized MongoDB database schemas and queries for improved performance</li>
+                            <li>Implemented authentication and authorization mechanisms using JWT</li>
+                            <li>Collaborated with frontend team to ensure seamless API integration and data flow</li>
+                            <li>Participated in code reviews and followed best practices for code quality and maintainability</li>
                         </ul>
-                    </li>
-                    <li><strong>TypeScript (TS):</strong>
-                        <ul>
-                            <li>Expertise in using TypeScript for adding static typing and improving code quality in large-scale applications.</li>
-                            <li>Experience with TypeScript's interfaces, types, generics, and type inference for creating robust, maintainable code.</li>
-                            <li>Migrated JavaScript codebases to TypeScript, improving development efficiency and code safety.</li>
-                            <li>Integrated TypeScript with Node.js, Express, and other server-side libraries for better type-checking.</li>
-                            <li>Familiar with TypeScript's configuration options (tsconfig.json) and best practices for compiling TypeScript code.</li>
+                    </article>
+                    
+                    <article class="experience-card">
+                        <header class="exp-header">
+                            <div class="exp-title-group">
+                                <h3 class="exp-position">MEAN Stack Developer</h3>
+                                <p class="exp-company">Dhenushya Infotech Pvt Ltd</p>
+                            </div>
+                            <time class="exp-duration">June 2019 - Oct 2020</time>
+                        </header>
+                        <ul class="exp-responsibilities">
+                            <li>Developed full-stack web applications using Angular, Node.js, Express.js, and MongoDB</li>
+                            <li>Created reusable UI components and RESTful APIs for scalable web applications</li>
+                            <li>Implemented JWT-based authentication and authorization systems</li>
+                            <li>Optimized application performance and database queries</li>
+                            <li>Collaborated with cross-functional teams to deliver high-quality software solutions</li>
                         </ul>
-                    </li>
-                    <li><strong>Node.js:</strong>
-                        <ul>
-                            <li>Extensive experience with Node.js for building scalable and high-performance server-side applications.</li>
-                            <li>Proficient in using Express.js for creating RESTful APIs and handling routing and middleware.</li>
-                            <li>Experience with integrating databases like MongoDB, PostgreSQL with Node.js applications.</li>
-                            <li>Expertise in handling asynchronous operations using async/await, Promises, and callback functions.</li>
-                            <li>Knowledge of building microservices using Node.js and deploying them in Docker containers.</li>
-                            <li>Familiar with security best practices in Node.js applications, including authentication and authorization using JWT, OAuth, etc.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="section">
-                <h2>Work Experience</h2>
-                <ul>
-                    <li>
-                        <strong>Maren Solutions Pvt Ltd</strong>
-                        <p><em>Feb 2022 - Present</em></p>
-                        <ul>
-                            <li>Developed and maintained RESTful APIs using Node.js to facilitate secure communication between patients and healthcare providers.</li>
-                            <li>Integrated third-party services, including payment gateways, to streamline booking and subscriptions.</li>
-                            <li>Enhanced platform scalability to support over 100,000 simultaneous users.</li>
-                            <li>Optimized backend performance, reducing API response times by 40%.</li>
-                            <li>Collaborated with teams to implement real-time appointment scheduling and video consultation features.</li>
-                            <li>Used MongoDB to manage user profiles, medical histories, and consultation records securely.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Beyond Drops Pvt Ltd</strong> - Node.js Developer
-                        <p><em>July 2021 - Oct 2021</em></p>
-                        <ul>
-                            <li>Implemented backend features using Node.js and Express.js to support business operations.</li>
-                            <li>Designed and optimized database structures using MongoDB.</li>
-                            <li>Collaborated with the frontend team to ensure seamless API integration.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Dhenushya Infotech Pvt Ltd</strong> - MEAN Stack Developer
-                        <p><em>June 2019 - Oct 2020</em></p>
-                        <ul>
-                            <li>Developed dynamic web applications using Angular, Node.js, and MongoDB.</li>
-                            <li>Worked on creating reusable UI components for scalable web applications.</li>
-                            <li>Implemented authentication and authorization using JWT.</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="section">
-                <h2>Technical Skills</h2>
-                <ul>
-                    <li>Express.js and RESTful APIs</li>
-                    <li>Asynchronous Programming and Event-Driven Architecture</li>
-                    <li>MongoDB with Mongoose ORM</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>TypeScript</li>
-                    <li>Postman for API testing</li>
-                    <li>Jenkins for CI/CD</li>
-                    <li>Git for version control</li>
-                    <li>Linux (Ubuntu) environment</li>
-                </ul>
-            </div>
+                    </article>
+                </section>
+                
+                <section class="content-section fade-in">
+                    <h2 class="section-heading">
+                        <span class="heading-line"></span>
+                        <span class="heading-text">Technical Skills</span>
+                    </h2>
+                    <div class="skills-container">
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">
+                                <span class="skill-icon">⚙️</span>
+                                Backend Technologies
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Node.js (5+ years)</span>
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">RESTful APIs</span>
+                                <span class="skill-tag">Microservices</span>
+                                <span class="skill-tag">WebSocket</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">
+                                <span class="skill-icon">💻</span>
+                                Programming Languages
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript (ES6+)</span>
+                                <span class="skill-tag">TypeScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">
+                                <span class="skill-icon">🗄️</span>
+                                Databases & ORMs
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Mongoose ODM</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">Redis</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">
+                                <span class="skill-icon">🛠️</span>
+                                Tools & Technologies
+                            </h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Postman</span>
+                                <span class="skill-tag">Jenkins</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Linux/Ubuntu</span>
+                                <span class="skill-tag">JWT</span>
+                                <span class="skill-tag">Bull Queue</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </div>
 </body>
