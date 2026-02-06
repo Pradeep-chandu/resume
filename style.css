@@ -38,10 +38,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.resume-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .resume-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
 
 .resume {
   display: grid;
@@ -117,7 +118,7 @@ body {
   backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1);
   transform: translateZ(0) scale(1);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -134,7 +135,6 @@ body {
   transform: translateZ(0) scale(1.08);
   border-color: var(--primary-color);
   box-shadow: 0 12px 32px rgba(52, 152, 219, 0.4);
-  filter: contrast(1.2) saturate(1.15) brightness(1.1);
 }
 
 .profile-overlay {
@@ -166,6 +166,23 @@ body {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 15px;
   font-weight: 400;
+  display: inline-block;
+  min-height: 1.5em;
+}
+
+.profile-title.typing::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: rgba(255, 255, 255, 0.8);
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .experience-badge {
@@ -656,92 +673,476 @@ body {
   }
 }
 
+/* Mobile contact quick actions - hidden on desktop */
+.mobile-contact-bar {
+  display: none;
+}
+
+/* Mobile Sticky Contact Bar */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--gradient-dark);
+  padding: 12px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-sticky-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+}
+
+.sticky-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 60px;
+}
+
+.sticky-btn:active {
+  background: rgba(52, 152, 219, 0.3);
+  transform: scale(0.95);
+}
+
+.sticky-icon {
+  font-size: 20px;
+}
+
+.sticky-text {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.call-btn:active {
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.email-btn:active {
+  background: rgba(33, 150, 243, 0.3);
+}
+
+.share-btn:active {
+  background: rgba(156, 39, 176, 0.3);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-to-top:active {
+  transform: scale(0.9);
+  background: var(--primary-dark);
+}
+
+.scroll-to-top span {
+  display: block;
+  line-height: 1;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 14px;
+  z-index: 10000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 0;
+    padding-bottom: 80px; /* Space for sticky bar */
+  }
+
+  .resume-container {
+    padding: 0;
   }
 
   .resume {
     grid-template-columns: 1fr;
-    border-radius: 12px;
+    border-radius: 0;
+    min-height: 100vh;
   }
 
+  /* Show sticky bar and scroll button on mobile */
+  .mobile-sticky-bar {
+    display: flex;
+  }
+
+  .scroll-to-top {
+    display: block;
+    bottom: 90px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  /* Mobile: Contact header at top */
   .left-section {
-    padding: 30px 25px;
+    padding: 20px;
+    order: 1;
+  }
+
+  /* Mobile contact quick actions */
+  .mobile-contact-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    flex-wrap: wrap;
+  }
+
+  .mobile-contact-btn {
+    flex: 1;
+    min-width: calc(50% - 5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(52, 152, 219, 0.2);
+    border: 1px solid rgba(52, 152, 219, 0.3);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-contact-btn:active {
+    background: rgba(52, 152, 219, 0.4);
+    transform: scale(0.98);
+  }
+
+  .mobile-contact-btn .contact-icon {
+    font-size: 18px;
   }
 
   .right-section {
-    padding: 30px 25px;
+    padding: 20px;
+    order: 2;
   }
 
-  .profile-img {
-    width: 140px;
-    height: 140px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: auto;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    filter: contrast(1.1) saturate(1.1) brightness(1.05);
-  }
-
-  .profile-name {
-    font-size: 24px;
-  }
-
-  .section-heading {
+  .profile-card {
     margin-bottom: 20px;
+    padding-bottom: 15px;
   }
 
-  .heading-text {
-    font-size: 22px;
-  }
-
-  .exp-header {
-    flex-direction: column;
-  }
-
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
   .profile-img {
     width: 120px;
     height: 120px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: auto;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    filter: contrast(1.1) saturate(1.1) brightness(1.05);
   }
 
   .profile-name {
     font-size: 22px;
+    margin: 10px 0 5px;
+  }
+
+  .profile-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .experience-badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .info-section {
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  /* Hide regular contact section on mobile, use quick bar instead */
+  .left-section .info-section:first-of-type {
+    display: none;
+  }
+
+  .section-heading {
+    margin-bottom: 16px;
   }
 
   .heading-text {
     font-size: 20px;
   }
 
+  .heading-line {
+    width: 3px;
+    height: 28px;
+  }
+
+  .content-section {
+    margin-bottom: 22px;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .experience-card {
+    margin-bottom: 18px;
+    padding: 16px;
+  }
+
+  .project-highlight {
+    padding: 14px;
+    margin-top: 12px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .skill-group {
+    padding: 14px;
+  }
+
+  .contact-item,
+  .social-link {
+    padding: 10px;
+  }
+
+  .edu-card {
+    padding: 12px;
+  }
+
+  /* Compact education on mobile */
+  .education-list {
+    gap: 10px;
+  }
+
+  /* Hide languages section on mobile to save space */
+  .info-section:nth-of-type(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    padding: 0;
+    padding-bottom: 75px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .left-section,
+  .right-section {
+    padding: 15px;
+  }
+
+  .mobile-contact-bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .mobile-contact-btn {
+    padding: 10px 12px;
+    font-size: 13px;
+    min-width: calc(50% - 4px);
+  }
+
+  .mobile-sticky-bar {
+    padding: 10px 8px;
+  }
+
+  .sticky-btn {
+    padding: 8px 6px;
+    min-height: 55px;
+    font-size: 10px;
+  }
+
+  .sticky-icon {
+    font-size: 18px;
+  }
+
+  .sticky-text {
+    font-size: 10px;
+  }
+
+  .scroll-to-top {
+    bottom: 85px;
+    right: 12px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .toast {
+    bottom: 90px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 22px;
+  }
+
+  .profile-title {
+    font-size: 14px;
+  }
+
+  .experience-badge {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 15px;
+  }
+
+  .heading-text {
+    font-size: 20px;
+  }
+
+  .heading-line {
+    height: 30px;
+  }
+
   .exp-position {
     font-size: 18px;
+  }
+
+  .exp-company {
+    font-size: 15px;
   }
 
   .summary-text,
   .achievements-list li,
   .exp-responsibilities li {
     font-size: 13px;
+    line-height: 1.7;
   }
 
-  .experience-card,
-  .project-highlight {
-    padding: 18px;
+  .experience-card {
+    padding: 15px;
+    margin-bottom: 18px;
   }
+
+  .project-highlight {
+    padding: 15px;
+  }
+
+  .skill-group {
+    padding: 12px;
+  }
+
+  .skill-group-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .skill-tag {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .contact-item,
+  .social-link {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .edu-card {
+    padding: 10px;
+  }
+
+  .edu-degree {
+    font-size: 14px;
+  }
+
+  .edu-institution,
+  .edu-year {
+    font-size: 12px;
+  }
+
+  .language-tag {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Touch device optimizations */
+.touch-device .skill-tag:hover,
+.touch-device .experience-card:hover,
+.touch-device .skill-group:hover {
+  transform: none;
+}
+
+.touch-device .skill-tag:active {
+  transform: scale(0.98);
+  background: var(--primary-color);
+  color: white;
 }
 
 /* Print Styles */

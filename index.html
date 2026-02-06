@@ -10,12 +10,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Mobile Sticky Contact Bar -->
+    <div class="mobile-sticky-bar">
+        <a href="tel:+918522991845" class="sticky-btn call-btn">
+            <span class="sticky-icon">📱</span>
+            <span class="sticky-text">Call</span>
+        </a>
+        <a href="mailto:bpradeepchandu97@gmail.com" class="sticky-btn email-btn">
+            <span class="sticky-icon">✉️</span>
+            <span class="sticky-text">Email</span>
+        </a>
+        <button class="sticky-btn share-btn" onclick="shareResume()">
+            <span class="sticky-icon">🔗</span>
+            <span class="sticky-text">Share</span>
+        </button>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <span>↑</span>
+    </button>
+
     <div class="resume-container">
         <div class="resume">
             <!-- Left Section -->
             <aside class="left-section">
+                <!-- Mobile Contact Quick Actions -->
+                <div class="mobile-contact-bar">
+                    <a href="tel:+918522991845" class="mobile-contact-btn">
+                        <span class="contact-icon">📱</span>
+                        <span>Call</span>
+                    </a>
+                    <a href="mailto:bpradeepchandu97@gmail.com" class="mobile-contact-btn">
+                        <span class="contact-icon">✉️</span>
+                        <span>Email</span>
+                    </a>
+                </div>
+
                 <div class="profile-card">
                     <div class="profile-image-wrapper">
                         <img src="profile.jpg" alt="B. Pradeep Chandu" class="profile-img">
@@ -254,5 +288,6 @@
             </main>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
