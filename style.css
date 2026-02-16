@@ -1,3 +1,6 @@
+/* ============================================
+   CSS Variables - Design System
+   ============================================ */
 :root {
   --primary-color: #3498db;
   --primary-dark: #2980b9;
@@ -14,9 +17,17 @@
   --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --gradient-dark: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --focus-outline: 3px solid var(--primary-color);
+  --focus-outline-offset: 2px;
 }
 
-* {
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,6 +35,20 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -38,6 +63,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  contain: layout style paint;
 }
 
 @keyframes gradientShift {
@@ -46,11 +73,22 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-  .resume-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+    background: var(--gradient-primary);
   }
+}
+
+/* ============================================
+   Layout Components
+   ============================================ */
+.resume-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  contain: layout;
+}
 
 .resume {
   display: grid;
@@ -287,6 +325,12 @@ body {
   color: var(--primary-color);
 }
 
+.contact-link:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 4px;
+}
+
 .education-list {
   display: flex;
   flex-direction: column;
@@ -370,6 +414,12 @@ body {
   color: white;
 }
 
+.social-link:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 4px;
+}
+
 .social-icon {
   font-size: 18px;
 }
@@ -443,7 +493,9 @@ body {
   background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
   border-radius: 16px;
   border-left: 5px solid var(--primary-color);
-  border: 1px solid rgba(52, 152, 219, 0.1);
+  border-top: 1px solid rgba(52, 152, 219, 0.1);
+  border-right: 1px solid rgba(52, 152, 219, 0.1);
+  border-bottom: 1px solid rgba(52, 152, 219, 0.1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -657,7 +709,9 @@ body {
   background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
   border-radius: 12px;
   border-left: 4px solid var(--primary-color);
-  border: 1px solid rgba(52, 152, 219, 0.1);
+  border-top: 1px solid rgba(52, 152, 219, 0.1);
+  border-right: 1px solid rgba(52, 152, 219, 0.1);
+  border-bottom: 1px solid rgba(52, 152, 219, 0.1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -708,6 +762,11 @@ body {
   border-color: var(--primary-color);
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.skill-tag:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
 }
 
 /* Responsive Design */
@@ -767,6 +826,12 @@ body {
   transform: scale(0.95);
 }
 
+.sticky-btn:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 4px;
+}
+
 .sticky-icon {
   font-size: 20px;
 }
@@ -811,9 +876,19 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 .scroll-to-top:active {
   transform: scale(0.9);
   background: var(--primary-dark);
+}
+
+.scroll-to-top:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
 }
 
 .scroll-to-top span {
@@ -941,11 +1016,16 @@ body {
   .profile-title {
     font-size: 14px;
     margin-bottom: 10px;
+    display: block;
+    width: 100%;
   }
 
   .experience-badge {
     padding: 6px 12px;
     font-size: 12px;
+    display: block;
+    width: 100%;
+    justify-content: center;
   }
 
   .info-section {
@@ -1094,11 +1174,16 @@ body {
 
   .profile-title {
     font-size: 14px;
+    display: block;
+    width: 100%;
   }
 
   .experience-badge {
     padding: 6px 14px;
     font-size: 13px;
+    display: block;
+    width: 100%;
+    justify-content: center;
   }
 
   .section-title {
@@ -1189,24 +1274,84 @@ body {
   color: white;
 }
 
-/* Print Styles */
+/* ============================================
+   Print Styles - Production Ready
+   ============================================ */
 @media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
   body {
     background: white;
     padding: 0;
+    font-size: 12pt;
+    line-height: 1.5;
   }
 
   .resume {
     box-shadow: none;
     border-radius: 0;
+    max-width: 100%;
+    margin: 0;
+    page-break-inside: avoid;
+  }
+
+  .resume::before {
+    display: none;
   }
 
   .left-section {
-    background: #2c3e50;
+    background: #2c3e50 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: white !important;
+    page-break-inside: avoid;
+  }
+
+  .left-section::before {
+    background: #2c3e50 !important;
+  }
+
+  .right-section {
+    page-break-inside: avoid;
+  }
+
+  .experience-card,
+  .skill-group,
+  .project-highlight {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .experience-card:hover,
   .skill-group:hover {
     transform: none;
+  }
+
+  .mobile-sticky-bar,
+  .scroll-to-top,
+  .mobile-contact-bar {
+    display: none !important;
+  }
+
+  .section-heading,
+  .section-title {
+    page-break-after: avoid;
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  @page {
+    margin: 1cm;
+    size: A4;
   }
 }
