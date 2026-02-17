@@ -90,7 +90,7 @@
         });
     }
 
-    // Dynamic typing effect for profile title
+    // Enhanced typing effect for profile title
     function initTypingEffect() {
         const titleElement = document.querySelector('.profile-title');
         if (!titleElement) return;
@@ -108,9 +108,9 @@
                 clearInterval(typeInterval);
                 setTimeout(() => {
                     titleElement.classList.remove('typing');
-                }, 500);
+                }, 1000);
             }
-        }, 100);
+        }, 80);
     }
 
     // Animated counter for experience badge
@@ -224,6 +224,77 @@
         }, 2000);
     }
 
+    // Dark mode toggle functionality
+    function initThemeToggle() {
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.setAttribute('aria-label', 'Toggle dark mode');
+        themeToggle.innerHTML = '🌙';
+        document.body.appendChild(themeToggle);
+
+        // Get saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+            
+            // Add transition effect
+            document.body.style.transition = 'background 0.3s ease, color 0.3s ease';
+        });
+
+        function updateThemeIcon(theme) {
+            themeToggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+        }
+    }
+
+    // Enhanced scroll animations with parallax
+    function initEnhancedScrollAnimations() {
+        if (!('IntersectionObserver' in window)) return;
+        
+        const observerOptions = {
+            threshold: [0, 0.25, 0.5, 0.75, 1],
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const enhancedObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const ratio = entry.intersectionRatio;
+                if (ratio > 0) {
+                    raf(() => {
+                        entry.target.style.opacity = Math.max(ratio, 0.3);
+                        entry.target.style.transform = `translateY(${30 * (1 - ratio)}px)`;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.experience-card, .skill-group').forEach(el => {
+            enhancedObserver.observe(el);
+        });
+    }
+
+    // Add smooth reveal animation on page load
+    function initPageLoadAnimation() {
+        const resume = document.querySelector('.resume');
+        if (resume) {
+            resume.style.opacity = '0';
+            resume.style.transform = 'scale(0.95) translateY(20px)';
+            
+            setTimeout(() => {
+                resume.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                resume.style.opacity = '1';
+                resume.style.transform = 'scale(1) translateY(0)';
+            }, 100);
+        }
+    }
+
     // Initialize all features when DOM is ready
     function init() {
         return safeExecute(() => {
@@ -237,7 +308,10 @@
             initObserver();
 
             // Initialize all features with error handling
+            safeExecute(() => initThemeToggle(), 'initThemeToggle');
+            safeExecute(() => initPageLoadAnimation(), 'initPageLoadAnimation');
             safeExecute(() => initScrollAnimations(), 'initScrollAnimations');
+            safeExecute(() => initEnhancedScrollAnimations(), 'initEnhancedScrollAnimations');
             safeExecute(() => initSkillInteractions(), 'initSkillInteractions');
             safeExecute(() => initAchievementInteractions(), 'initAchievementInteractions');
             safeExecute(() => initSmoothScroll(), 'initSmoothScroll');
