@@ -264,6 +264,31 @@ body {
   transform: translateY(-2px);
 }
 
+.ats-download-btn {
+  margin-top: 14px;
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.ats-download-btn:hover {
+  background: rgba(52, 152, 219, 0.3);
+  border-color: rgba(52, 152, 219, 0.5);
+  transform: translateY(-1px);
+}
+
+.ats-download-btn:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
 .badge-icon {
   font-size: 16px;
 }
@@ -429,6 +454,25 @@ body {
   padding: 40px;
   background: var(--bg-white);
   overflow-y: auto;
+}
+
+.ats-plain-header {
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background: #f8fbff;
+  border: 1px solid rgba(52, 152, 219, 0.25);
+  border-radius: 10px;
+}
+
+.ats-plain-header p {
+  font-size: 13px;
+  color: #1f2d3d;
+  margin: 0 0 6px;
+  line-height: 1.5;
+}
+
+.ats-plain-header p:last-child {
+  margin-bottom: 0;
 }
 
 .content-section {
@@ -739,6 +783,8 @@ body {
 }
 
 .skill-tags {
+  list-style: none;
+  padding-left: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -996,6 +1042,15 @@ body {
   .right-section {
     padding: 20px;
     order: 2;
+  }
+
+  .ats-plain-header {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ats-plain-header p {
+    font-size: 12px;
   }
 
   .profile-card {
@@ -1295,6 +1350,7 @@ body {
   }
 
   .resume {
+    display: block !important;
     box-shadow: none;
     border-radius: 0;
     max-width: 100%;
@@ -1307,19 +1363,57 @@ body {
   }
 
   .left-section {
-    background: #2c3e50 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    color: white !important;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 0 0 16px 0 !important;
+    box-shadow: none !important;
     page-break-inside: avoid;
   }
 
   .left-section::before {
-    background: #2c3e50 !important;
+    display: none !important;
   }
 
   .right-section {
+    background: #fff !important;
+    padding: 0 !important;
     page-break-inside: avoid;
+  }
+
+  .profile-overlay,
+  .heading-line,
+  .title-icon,
+  .contact-icon,
+  .social-icon,
+  .skill-icon,
+  .badge-icon,
+  .project-badge,
+  .sticky-icon {
+    display: none !important;
+  }
+
+  .profile-img {
+    display: none !important;
+  }
+
+  .profile-card {
+    border-bottom: 1px solid #ddd !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .profile-name,
+  .profile-title,
+  .experience-badge,
+  .section-heading .heading-text,
+  .section-title {
+    color: #000 !important;
+  }
+
+  .contact-link,
+  .exp-company {
+    color: #111 !important;
+    text-decoration: none !important;
   }
 
   .experience-card,
