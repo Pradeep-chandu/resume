@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="B. Pradeep Chandu - Software Developer | Senior Node.js Backend Engineer | 6+ years | Node.js, TypeScript, Express.js, MongoDB, Microservices | Hyderabad">
-    <meta name="keywords" content="Software Developer, Senior Node.js Developer, Backend Engineer, Node.js, TypeScript, JavaScript, Express.js, MongoDB, REST API, Microservices, JWT, RBAC, gRPC, Redis, Healthcare">
+    <meta name="description" content="B. Pradeep Chandu — Software Developer specializing in Node.js backend engineering. 6+ years with TypeScript, Express.js, MongoDB, microservices, JWT, and Redis. Based in Hyderabad, India.">
+    <meta name="keywords" content="Software Developer, Node.js Developer, Backend Engineer, Node.js, TypeScript, JavaScript, Express.js, MongoDB, REST API, Microservices, JWT, RBAC, gRPC, Redis, Healthcare, Hyderabad">
     <meta name="author" content="B. Pradeep Chandu">
-    <meta name="theme-color" content="#3498db">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#243447">
+    <meta name="color-scheme" content="light">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="B. Pradeep Chandu | Software Developer | Node.js Backend">
+    <meta property="og:description" content="Software Developer with 6+ years of Node.js backend experience. TypeScript, Express.js, MongoDB, microservices. Hyderabad, India.">
+    <meta property="og:url" content="https://pradeep-chandu.github.io/resume/">
+    <meta property="og:image" content="https://pradeep-chandu.github.io/resume/profile.jpg">
+    <meta property="og:locale" content="en_IN">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="B. Pradeep Chandu | Software Developer | Node.js Backend">
+    <meta name="twitter:description" content="Software Developer with 6+ years of Node.js backend experience. Hyderabad, India.">
+
     <title>B. Pradeep Chandu | Software Developer | Node.js Backend | TypeScript | MongoDB</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://pradeep-chandu.github.io/resume/">
     <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <nav class="mobile-sticky-bar" aria-label="Quick contact actions">
         <a href="tel:+918522991845" class="sticky-btn call-btn" aria-label="Call +91 8522991845">
             <span class="sticky-icon" aria-hidden="true">📱</span>
@@ -25,7 +42,7 @@
             <span class="sticky-icon" aria-hidden="true">✉️</span>
             <span class="sticky-text">Email</span>
         </a>
-        <button class="sticky-btn share-btn" onclick="shareResume()" aria-label="Share resume">
+        <button class="sticky-btn share-btn" type="button" onclick="shareResume()" aria-label="Share resume">
             <span class="sticky-icon" aria-hidden="true">🔗</span>
             <span class="sticky-text">Share</span>
         </button>
@@ -37,7 +54,7 @@
 
     <div class="resume-container">
         <div class="resume">
-            <aside class="left-section">
+            <aside class="left-section" aria-label="Profile and contact">
                 <nav class="mobile-contact-bar" aria-label="Mobile contact quick actions">
                     <a href="tel:+918522991845" class="mobile-contact-btn" aria-label="Call +91 8522991845">
                         <span class="contact-icon" aria-hidden="true">📱</span>
@@ -51,20 +68,28 @@
 
                 <div class="profile-card">
                     <div class="profile-image-wrapper">
-                        <img src="profile.jpg" alt="B. Pradeep Chandu" class="profile-img">
-                        <div class="profile-overlay"></div>
+                        <img
+                            src="profile.jpg"
+                            alt="Portrait of B. Pradeep Chandu"
+                            class="profile-img"
+                            width="160"
+                            height="160"
+                            decoding="async"
+                            fetchpriority="high"
+                        >
                     </div>
                     <h1 class="profile-name">B. Pradeep Chandu</h1>
-                    <p class="profile-title">Software Developer | Node.js Backend</p>
-                    <div class="experience-badge">
-                        <span class="badge-icon">⚡</span>
+                    <p class="profile-title">Software Developer |<wbr> Node.js Backend</p>
+                    <p class="profile-location">Hyderabad, India</p>
+                    <div class="experience-badge" aria-label="6 or more years of experience">
+                        <span class="badge-icon" aria-hidden="true">⚡</span>
                         <span>6+ Years Experience</span>
                     </div>
                     <a href="resume-ats.html" class="ats-download-btn" target="_blank" rel="noopener noreferrer">
                         Download ATS Resume
                     </a>
                 </div>
-                
+
                 <section class="info-section" aria-labelledby="contact-heading">
                     <h2 class="section-title" id="contact-heading">
                         <span class="title-icon" aria-hidden="true">📞</span>
@@ -77,15 +102,15 @@
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon" aria-hidden="true">📱</span>
-                            <a href="tel:+918522991845" class="contact-link" aria-label="Phone number">+91 8522991845</a>
+                            <a href="tel:+918522991845" class="contact-link">+91 8522991845</a>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon" aria-hidden="true">✉️</span>
-                            <a href="mailto:bpradeepchandu97@gmail.com" class="contact-link" aria-label="Email address">bpradeepchandu97@gmail.com</a>
+                            <a href="mailto:bpradeepchandu97@gmail.com" class="contact-link contact-link--wrap">bpradeepchandu97@gmail.com</a>
                         </div>
                     </address>
                 </section>
-                
+
                 <section class="info-section" aria-labelledby="education-heading">
                     <h2 class="section-title" id="education-heading">
                         <span class="title-icon" aria-hidden="true">🎓</span>
@@ -99,7 +124,7 @@
                         </article>
                     </div>
                 </section>
-                
+
                 <section class="info-section" aria-labelledby="languages-heading">
                     <h2 class="section-title" id="languages-heading">
                         <span class="title-icon" aria-hidden="true">🌐</span>
@@ -110,71 +135,71 @@
                         <span class="language-tag">Telugu</span>
                     </div>
                 </section>
-                
+
                 <section class="info-section" aria-labelledby="social-heading">
                     <h2 class="section-title" id="social-heading">
                         <span class="title-icon" aria-hidden="true">🔗</span>
                         Social
                     </h2>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/pradeep-chandu-359023210/" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <span class="social-icon">💼</span>
-                            <span>LinkedIn Profile</span>
+                        <a
+                            href="https://www.linkedin.com/in/pradeep-chandu-359023210/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                            aria-label="LinkedIn profile of B. Pradeep Chandu"
+                        >
+                            <span class="social-icon" aria-hidden="true">💼</span>
+                            <span class="social-link-text">linkedin.com/in/pradeep-chandu-359023210</span>
                         </a>
                     </div>
                 </section>
             </aside>
 
-            <main class="right-section">
-                <section class="ats-plain-header" aria-label="ATS quick profile">
+            <main class="right-section" id="main-content">
+                <section class="ats-plain-header" aria-label="Quick profile summary">
                     <p><strong>Name:</strong> B. Pradeep Chandu</p>
                     <p><strong>Title:</strong> Software Developer | Node.js Backend</p>
                     <p><strong>Location:</strong> Hyderabad, India</p>
                     <p><strong>Experience:</strong> 6+ Years</p>
-                    <p><strong>Contact:</strong> +91 8522991845 | bpradeepchandu97@gmail.com | linkedin.com/in/pradeep-chandu-359023210</p>
-                    <p><strong>Primary Skills:</strong> Node.js, TypeScript, JavaScript, Express.js, REST APIs, MongoDB, Microservices, gRPC, Redis, JWT, RBAC</p>
+                    <p><strong>Current:</strong> Software Developer, Maren Solutions Pvt Ltd</p>
+                    <p class="ats-plain-header__contact"><strong>Contact:</strong><br>+91 8522991845<br>bpradeepchandu97@gmail.com<br>linkedin.com/in/pradeep-chandu-359023210</p>
+                    <p class="ats-plain-header__skills"><strong>Primary Skills:</strong><br>Node.js, TypeScript, JavaScript, Express.js, REST APIs, MongoDB, Microservices, gRPC, Redis, JWT, RBAC</p>
                 </section>
 
-                <section class="content-section fade-in" aria-labelledby="summary-heading">
+                <section class="content-section" aria-labelledby="summary-heading">
                     <h2 class="section-heading" id="summary-heading">
                         <span class="heading-line" aria-hidden="true"></span>
                         <span class="heading-text">Professional Summary</span>
                     </h2>
-                    <p class="summary-text">
-                        Software Developer with <strong>6+ years</strong> of experience building and maintaining backend applications using
-                        <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>JavaScript</strong>, <strong>Express.js</strong>, and <strong>MongoDB</strong>.
-                        Experienced in RESTful API development, microservices-oriented service communication, database query optimization,
-                        authentication and authorization, and production troubleshooting. Contributed to healthcare platform development covering
-                        appointment booking, teleconsultation, laboratory services, payment workflows, and patient-related services,
-                        collaborating with cross-functional teams to deliver reliable production backends.
-                    </p>
+                    <p class="summary-text">Software Developer with <strong>6+ years</strong> of experience building and maintaining backend applications using <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>JavaScript</strong>, <strong>Express.js</strong>, and <strong>MongoDB</strong>. Experienced in RESTful API development, microservices-oriented service communication, database query optimization, authentication and authorization, and production troubleshooting. Contributed to healthcare platform development covering appointment booking, teleconsultation, laboratory services, payment workflows, and patient-related services, collaborating with cross-functional teams to deliver reliable production backends.</p>
                 </section>
-                
-                <section class="content-section fade-in" aria-labelledby="experience-heading">
+
+                <section class="content-section" aria-labelledby="experience-heading">
                     <h2 class="section-heading" id="experience-heading">
                         <span class="heading-line" aria-hidden="true"></span>
                         <span class="heading-text">Work Experience</span>
                     </h2>
-                    
+
                     <article class="experience-card">
                         <header class="exp-header">
                             <div class="exp-title-group">
                                 <h3 class="exp-position">Software Developer</h3>
                                 <p class="exp-company">Maren Solutions Pvt Ltd</p>
                             </div>
-                            <time class="exp-duration" datetime="2022-02">Feb 2022 - Present</time>
+                            <time class="exp-duration" datetime="2022-02">Feb 2022 – Present</time>
                         </header>
-                        
+
                         <div class="project-highlight">
                             <div class="project-badge" role="status" aria-label="Featured project">
                                 <span class="badge-dot" aria-hidden="true"></span>
                                 <span>Featured Project</span>
                             </div>
-                            <h4 class="project-name">Sanar.sa - Healthcare Platform</h4>
+                            <h4 class="project-name">Sanar.sa — Healthcare Platform</h4>
                             <p class="project-description">
                                 Healthcare platform connecting patients with providers across appointment booking, teleconsultation, laboratory services, and patient workflows.
                             </p>
-                            
+
                             <div class="backend-achievements">
                                 <h5 class="achievements-title">Key Contributions</h5>
                                 <ul class="achievements-list">
@@ -190,14 +215,14 @@
                             </div>
                         </div>
                     </article>
-                    
+
                     <article class="experience-card">
                         <header class="exp-header">
                             <div class="exp-title-group">
                                 <h3 class="exp-position">Node.js Developer</h3>
                                 <p class="exp-company">Beyond Drops Pvt Ltd</p>
                             </div>
-                            <time class="exp-duration" datetime="2021-07/2021-10">Jul 2021 - Oct 2021</time>
+                            <time class="exp-duration" datetime="2021-07/2021-10">Jul 2021 – Oct 2021</time>
                         </header>
                         <ul class="exp-responsibilities">
                             <li>Developed production backend services with Node.js and Express, collaborating with frontend teams on API contracts and data models.</li>
@@ -206,14 +231,14 @@
                             <li>Participated in code reviews and followed coding standards to improve backend quality.</li>
                         </ul>
                     </article>
-                    
+
                     <article class="experience-card">
                         <header class="exp-header">
                             <div class="exp-title-group">
                                 <h3 class="exp-position">MEAN Stack Developer</h3>
                                 <p class="exp-company">Dhenushya Infotech Pvt Ltd</p>
                             </div>
-                            <time class="exp-duration" datetime="2019-06/2020-10">Jun 2019 - Oct 2020</time>
+                            <time class="exp-duration" datetime="2019-06/2020-10">Jun 2019 – Oct 2020</time>
                         </header>
                         <ul class="exp-responsibilities">
                             <li>Built and maintained Node.js, Express.js, and MongoDB backend services as part of MEAN stack delivery.</li>
@@ -223,28 +248,28 @@
                         </ul>
                     </article>
                 </section>
-                
-                <section class="content-section fade-in" aria-labelledby="skills-heading">
+
+                <section class="content-section" aria-labelledby="skills-heading">
                     <h2 class="section-heading" id="skills-heading">
                         <span class="heading-line" aria-hidden="true"></span>
                         <span class="heading-text">Technical Skills</span>
                     </h2>
                     <div class="skills-container">
                         <div class="skill-group">
-                            <h4 class="skill-group-title">
-                                <span class="skill-icon">💻</span>
+                            <h3 class="skill-group-title">
+                                <span class="skill-icon" aria-hidden="true">💻</span>
                                 Languages
-                            </h4>
+                            </h3>
                             <ul class="skill-tags">
                                 <li class="skill-tag">JavaScript</li>
                                 <li class="skill-tag">TypeScript</li>
                             </ul>
                         </div>
                         <div class="skill-group">
-                            <h4 class="skill-group-title">
-                                <span class="skill-icon">⚙️</span>
+                            <h3 class="skill-group-title">
+                                <span class="skill-icon" aria-hidden="true">⚙️</span>
                                 Backend
-                            </h4>
+                            </h3>
                             <ul class="skill-tags">
                                 <li class="skill-tag">Node.js</li>
                                 <li class="skill-tag">Express.js</li>
@@ -253,10 +278,10 @@
                             </ul>
                         </div>
                         <div class="skill-group">
-                            <h4 class="skill-group-title">
-                                <span class="skill-icon">🗄️</span>
+                            <h3 class="skill-group-title">
+                                <span class="skill-icon" aria-hidden="true">🗄️</span>
                                 Databases
-                            </h4>
+                            </h3>
                             <ul class="skill-tags">
                                 <li class="skill-tag">MongoDB</li>
                                 <li class="skill-tag">Mongoose</li>
@@ -265,10 +290,10 @@
                             </ul>
                         </div>
                         <div class="skill-group">
-                            <h4 class="skill-group-title">
-                                <span class="skill-icon">🏗️</span>
+                            <h3 class="skill-group-title">
+                                <span class="skill-icon" aria-hidden="true">🏗️</span>
                                 Architecture
-                            </h4>
+                            </h3>
                             <ul class="skill-tags">
                                 <li class="skill-tag">Microservices</li>
                                 <li class="skill-tag">API Design</li>
@@ -277,10 +302,10 @@
                             </ul>
                         </div>
                         <div class="skill-group">
-                            <h4 class="skill-group-title">
-                                <span class="skill-icon">🔒</span>
+                            <h3 class="skill-group-title">
+                                <span class="skill-icon" aria-hidden="true">🔒</span>
                                 Security &amp; Reliability
-                            </h4>
+                            </h3>
                             <ul class="skill-tags">
                                 <li class="skill-tag">JWT</li>
                                 <li class="skill-tag">RBAC</li>
@@ -291,10 +316,10 @@
                             </ul>
                         </div>
                         <div class="skill-group">
-                            <h4 class="skill-group-title">
-                                <span class="skill-icon">🛠️</span>
+                            <h3 class="skill-group-title">
+                                <span class="skill-icon" aria-hidden="true">🛠️</span>
                                 Tools &amp; Domain
-                            </h4>
+                            </h3>
                             <ul class="skill-tags">
                                 <li class="skill-tag">Git</li>
                                 <li class="skill-tag">Linux/Ubuntu</li>
@@ -303,6 +328,17 @@
                         </div>
                     </div>
                 </section>
+
+                <footer class="site-footer">
+                    <p>Software Developer · Node.js Backend · Hyderabad, India</p>
+                    <p>
+                        <a href="resume-ats.html" target="_blank" rel="noopener noreferrer">ATS Resume</a>
+                        ·
+                        <a href="mailto:bpradeepchandu97@gmail.com">Email</a>
+                        ·
+                        <a href="https://www.linkedin.com/in/pradeep-chandu-359023210/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </p>
+                </footer>
             </main>
         </div>
     </div>

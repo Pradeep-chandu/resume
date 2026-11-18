@@ -1,334 +1,99 @@
 /**
- * Resume Interactive Features - Senior Backend Engineer Portfolio
- * Performance-optimized animations and interactions
- * Production-ready with error handling and accessibility
+ * Resume portfolio interactions
+ * Lightweight, accessible, prefers-reduced-motion aware
  */
-(function() {
+(function () {
     'use strict';
 
-    // Performance optimization: Use requestAnimationFrame for animations
-    const raf = window.requestAnimationFrame || 
-                 window.webkitRequestAnimationFrame || 
-                 window.mozRequestAnimationFrame || 
-                 function(callback) { return setTimeout(callback, 16); };
-
-    // Error handling utility
-    function safeExecute(fn, context = 'Unknown') {
+    function safeExecute(fn, context) {
         try {
             return fn();
         } catch (error) {
-            console.error(`Error in ${context}:`, error);
+            console.error('Error in ' + context + ':', error);
             return null;
         }
     }
 
-    // Intersection Observer for scroll animations (performance-optimized)
-    let observer = null;
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    // Initialize observer with error handling
-    function initObserver() {
-        if (!('IntersectionObserver' in window)) {
-            // Fallback for older browsers
-            const elements = document.querySelectorAll('.experience-card, .skill-group, .content-section');
-            elements.forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            });
-            return;
-        }
-
-        observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    raf(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+    function prefersReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     }
 
-    // Animate elements on scroll
-    function initScrollAnimations() {
-        if (!observer) return;
-        
-        const animatedElements = document.querySelectorAll('.experience-card, .skill-group, .content-section');
-        animatedElements.forEach((el, index) => {
-            // Respect reduced motion preference
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (prefersReducedMotion) {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-                return;
-            }
-
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
-            observer.observe(el);
-        });
-    }
-
-    // Interactive skill tags with hover effects
-    function initSkillInteractions() {
-        const skillTags = document.querySelectorAll('.skill-tag');
-        skillTags.forEach(tag => {
-            tag.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.05)';
-                this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-            
-            tag.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    }
-
-    // Keep profile title fully visible (no typing animation — avoids incomplete title on load)
-    function initTypingEffect() {
-        const titleElement = document.querySelector('.profile-title');
-        if (!titleElement) return;
-        titleElement.classList.remove('typing');
-    }
-
-    // Animated counter for experience badge
-    function animateExperienceCounter() {
-        const badge = document.querySelector('.experience-badge span:last-child');
-        if (!badge) return;
-        
-        const targetText = badge.textContent;
-        const match = targetText.match(/(\d+)\+/);
-        if (!match) return;
-        
-        const targetNumber = parseInt(match[1]);
-        let currentNumber = 0;
-        const duration = 2000;
-        const increment = targetNumber / (duration / 16);
-        
-        const counterInterval = setInterval(() => {
-            currentNumber += increment;
-            if (currentNumber >= targetNumber) {
-                currentNumber = targetNumber;
-                clearInterval(counterInterval);
-            }
-            badge.textContent = `${Math.floor(currentNumber)}+ Years Experience`;
-        }, 16);
-    }
-
-    // Subtle parallax effect for profile image (disabled to prevent jumping)
-    function initParallaxEffect() {
-        // Parallax disabled - keeping function for future use if needed
-        // The jumping was caused by transform conflicts with hover effects
-        return;
-    }
-
-    // Interactive achievement list items
-    function initAchievementInteractions() {
-        const achievements = document.querySelectorAll('.achievements-list li, .exp-responsibilities li');
-        achievements.forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateX(-20px)';
-            
-            setTimeout(() => {
-                item.style.transition = 'all 0.4s ease-out';
-                item.style.opacity = '1';
-                item.style.transform = 'translateX(0)';
-            }, index * 50);
-            
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(8px)';
-                this.style.color = 'var(--primary-color)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0)';
-                this.style.color = '';
-            });
-        });
-    }
-
-    // Smooth scroll for anchor links
-    function initSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    }
-
-    // Performance monitoring (demonstrating backend thinking)
-    function logPerformanceMetrics() {
-        if (window.performance && window.performance.timing) {
-            window.addEventListener('load', () => {
-                const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
-                console.log(`Resume loaded in ${loadTime}ms - Optimized for performance`);
-            });
-        }
-    }
-
-    // Dynamic content loading simulation (backend pattern)
-    function simulateLazyLoading() {
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            if (img.complete) {
-                img.style.opacity = '1';
-            } else {
-                img.style.opacity = '0';
-                img.addEventListener('load', function() {
-                    this.style.transition = 'opacity 0.5s ease-in';
-                    this.style.opacity = '1';
-                });
-            }
-        });
-    }
-
-    // Interactive project badge pulse animation
-    function initBadgeAnimation() {
-        const badgeDot = document.querySelector('.badge-dot');
-        if (!badgeDot) return;
-        
-        setInterval(() => {
-            badgeDot.style.animation = 'none';
-            setTimeout(() => {
-                badgeDot.style.animation = 'pulse 2s infinite';
-            }, 10);
-        }, 2000);
-    }
-
-    // Initialize all features when DOM is ready
-    function init() {
-        return safeExecute(() => {
-            // Wait for DOM to be fully loaded
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', init);
-                return;
-            }
-
-            // Initialize observer first
-            initObserver();
-
-            // Initialize all features with error handling
-            safeExecute(() => initScrollAnimations(), 'initScrollAnimations');
-            safeExecute(() => initSkillInteractions(), 'initSkillInteractions');
-            safeExecute(() => initAchievementInteractions(), 'initAchievementInteractions');
-            safeExecute(() => initSmoothScroll(), 'initSmoothScroll');
-            safeExecute(() => logPerformanceMetrics(), 'logPerformanceMetrics');
-            safeExecute(() => simulateLazyLoading(), 'simulateLazyLoading');
-            safeExecute(() => initBadgeAnimation(), 'initBadgeAnimation');
-            safeExecute(() => initScrollToTop(), 'initScrollToTop');
-            
-            // Delayed animations for better UX
-            setTimeout(() => {
-                safeExecute(() => initTypingEffect(), 'initTypingEffect');
-                safeExecute(() => animateExperienceCounter(), 'animateExperienceCounter');
-            }, 500);
-            
-            // Initialize copy contact on mobile
-            if ('ontouchstart' in window) {
-                safeExecute(() => initCopyContact(), 'initCopyContact');
-            }
-        }, 'init');
-    }
-
-    // Start initialization
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-
-    // Handle window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            // Reinitialize on resize if needed (desktop only, no touch devices)
-            if (window.innerWidth > 768 && !('ontouchstart' in window)) {
-                initParallaxEffect();
-            }
-        }, 250);
-    });
-
-    // Disable hover effects on touch devices for better mobile UX
-    if ('ontouchstart' in window) {
-        document.body.classList.add('touch-device');
-    }
-
-    // Scroll to top functionality
     function initScrollToTop() {
-        const scrollBtn = document.getElementById('scrollToTop');
+        var scrollBtn = document.getElementById('scrollToTop');
         if (!scrollBtn) return;
 
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollBtn.style.opacity = '1';
-                scrollBtn.style.visibility = 'visible';
-            } else {
-                scrollBtn.style.opacity = '0';
-                scrollBtn.style.visibility = 'hidden';
-            }
-        });
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(function () {
+                var show = window.pageYOffset > 320;
+                scrollBtn.classList.toggle('show', show);
+                scrollBtn.style.opacity = show ? '1' : '0';
+                scrollBtn.style.visibility = show ? 'visible' : 'hidden';
+                ticking = false;
+            });
+        }, { passive: true });
 
-        // Scroll to top on click
-        scrollBtn.addEventListener('click', () => {
+        scrollBtn.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: prefersReducedMotion() ? 'auto' : 'smooth'
             });
         });
     }
 
-    // Share resume functionality with error handling
-    window.shareResume = function() {
-        return safeExecute(() => {
-            const shareData = {
-                title: 'B. Pradeep Chandu - Software Developer | Node.js Backend Resume',
-                text: 'Check out my resume - Software Developer | Node.js Backend | 6+ years of experience',
-                url: window.location.href
-            };
+    function showToast(message) {
+        var existingToast = document.querySelector('.toast');
+        if (existingToast) existingToast.remove();
 
-            if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-                navigator.share(shareData)
-                    .then(() => {
-                        showToast('Resume shared successfully!');
-                    })
-                    .catch((error) => {
-                        // User cancelled or error occurred - fallback to clipboard
-                        if (error.name !== 'AbortError') {
-                            copyToClipboard(window.location.href);
-                        }
-                    });
-            } else {
-                // Fallback: copy URL to clipboard
-                copyToClipboard(window.location.href);
-            }
-        }, 'shareResume');
-    };
+        var toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        toast.textContent = message;
+        document.body.appendChild(toast);
 
-    // Copy to clipboard function with error handling
+        window.requestAnimationFrame(function () {
+            toast.classList.add('show');
+        });
+
+        window.setTimeout(function () {
+            toast.classList.remove('show');
+            window.setTimeout(function () {
+                toast.remove();
+            }, 220);
+        }, 2600);
+    }
+
+    function fallbackCopyToClipboard(text) {
+        try {
+            var textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.setAttribute('readonly', '');
+            textArea.style.position = 'fixed';
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            var successful = document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showToast(successful ? 'Link copied to clipboard!' : 'Failed to copy. Please copy manually.');
+        } catch (err) {
+            console.error('Fallback copy failed:', err);
+            showToast('Failed to copy. Please copy manually.');
+        }
+    }
+
     function copyToClipboard(text) {
-        return safeExecute(() => {
+        return safeExecute(function () {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text)
-                    .then(() => {
+                    .then(function () {
                         showToast('Link copied to clipboard!');
                     })
-                    .catch((error) => {
-                        console.error('Clipboard write failed:', error);
+                    .catch(function () {
                         fallbackCopyToClipboard(text);
                     });
             } else {
@@ -337,109 +102,37 @@
         }, 'copyToClipboard');
     }
 
-    // Fallback copy method for older browsers
-    function fallbackCopyToClipboard(text) {
-        try {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed';
-            textArea.style.top = '0';
-            textArea.style.left = '0';
-            textArea.style.width = '2em';
-            textArea.style.height = '2em';
-            textArea.style.padding = '0';
-            textArea.style.border = 'none';
-            textArea.style.outline = 'none';
-            textArea.style.boxShadow = 'none';
-            textArea.style.background = 'transparent';
-            textArea.setAttribute('aria-hidden', 'true');
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            const successful = document.execCommand('copy');
-            document.body.removeChild(textArea);
-            
-            if (successful) {
-                showToast('Link copied to clipboard!');
+    window.shareResume = function () {
+        return safeExecute(function () {
+            var shareData = {
+                title: 'B. Pradeep Chandu - Software Developer | Node.js Backend Resume',
+                text: 'Check out my resume - Software Developer | Node.js Backend | 6+ years of experience',
+                url: window.location.href
+            };
+
+            if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
+                navigator.share(shareData).catch(function (error) {
+                    if (!error || error.name !== 'AbortError') {
+                        copyToClipboard(window.location.href);
+                    }
+                });
             } else {
-                showToast('Failed to copy. Please copy manually.');
+                copyToClipboard(window.location.href);
             }
-        } catch (err) {
-            console.error('Fallback copy failed:', err);
-            showToast('Failed to copy. Please copy manually.');
+        }, 'shareResume');
+    };
+
+    function init() {
+        safeExecute(initScrollToTop, 'initScrollToTop');
+
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            document.body.classList.add('touch-device');
         }
     }
 
-    // Toast notification
-    function showToast(message) {
-        // Remove existing toast if any
-        const existingToast = document.querySelector('.toast');
-        if (existingToast) {
-            existingToast.remove();
-        }
-
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.textContent = message;
-        document.body.appendChild(toast);
-
-        // Show toast
-        setTimeout(() => {
-            toast.classList.add('show');
-        }, 10);
-
-        // Hide and remove toast after 3 seconds
-        setTimeout(() => {
-            toast.classList.remove('show');
-            setTimeout(() => {
-                toast.remove();
-            }, 300);
-        }, 3000);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
     }
-
-    // Copy contact info functionality
-    function initCopyContact() {
-        const contactItems = document.querySelectorAll('.contact-link');
-        contactItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                // Allow default behavior (tel: and mailto: links)
-                // But add long-press to copy
-                let pressTimer;
-                
-                this.addEventListener('touchstart', function() {
-                    pressTimer = setTimeout(() => {
-                        e.preventDefault();
-                        const text = this.textContent.trim();
-                        copyToClipboard(text);
-                    }, 500);
-                });
-
-                this.addEventListener('touchend', function() {
-                    clearTimeout(pressTimer);
-                });
-            });
-        });
-    }
-
-    // Keyboard navigation support
-    function initKeyboardNavigation() {
-        // Add keyboard support for interactive elements
-        document.addEventListener('keydown', (e) => {
-            // Escape key to close modals/overlays (if any in future)
-            if (e.key === 'Escape') {
-                // Future: close any open modals
-            }
-            
-            // Enter/Space on buttons
-            if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('sticky-btn')) {
-                e.preventDefault();
-                e.target.click();
-            }
-        });
-    }
-
-    // Initialize keyboard navigation
-    safeExecute(() => initKeyboardNavigation(), 'initKeyboardNavigation');
-
 })();
