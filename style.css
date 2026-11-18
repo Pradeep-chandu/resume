@@ -225,8 +225,13 @@ body {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 15px;
   font-weight: 400;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  text-align: center;
   min-height: 1.5em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .profile-title.typing::after {
@@ -469,6 +474,12 @@ body {
   color: #1f2d3d;
   margin: 0 0 6px;
   line-height: 1.5;
+  word-break: break-word;
+}
+
+.contact-item .contact-link:not(a) {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
 }
 
 .ats-plain-header p:last-child {

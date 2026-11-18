@@ -1,227 +1,154 @@
-# Resume Review: Senior Engineering Manager Perspective
-## Strategic Feedback for Product-Based Company Hiring
+# Resume Review & Change Log
+
+**Review date:** November 18, 2026  
+**Target roles:** Senior Node.js Developer, Senior Backend Engineer, Backend Engineer  
+**Location:** Hyderabad, India  
+**Official current title:** Software Developer (Maren Solutions)
 
 ---
 
-## 🎯 POSITIONING WEAKNESSES
+## Issues Found (Original)
 
-### 1. **Title Inconsistency & Level Clarity**
-- **Issue**: Title says "Senior Node.js Developer" but role is "Senior Node.js Developer / Backend Engineer"
-- **Impact**: Creates confusion about your primary identity and target level
-- **Suggestion**: Choose one consistent title. For product companies, "Senior Backend Engineer" or "Backend Engineer" (if targeting L4/L5) is stronger than "Node.js Developer" which sounds tool-specific
-
-### 2. **Missing Leadership & Influence Signals**
-- **Issue**: No mention of mentoring, code review leadership, technical decision-making, or cross-team collaboration
-- **Impact**: Product companies value engineers who can influence beyond their immediate work
-- **Suggestion**: Add bullets about:
-  - Mentoring junior engineers
-  - Leading technical RFCs or design reviews
-  - Cross-functional collaboration (Product, Design, QA)
-  - Technical decision-making authority
-
-### 3. **Education Positioning**
-- **Issue**: B.Tech 66% is prominently displayed - may raise questions for some companies
-- **Impact**: Could be a filter for companies that heavily weight academic performance
-- **Suggestion**: Consider de-emphasizing percentage or moving education lower. Your experience speaks louder than grades
-
-### 4. **Career Progression Not Clear**
-- **Issue**: Three roles but unclear growth trajectory or increasing responsibility
-- **Impact**: Hiring managers want to see progression toward senior/lead level
-- **Suggestion**: Make it explicit how responsibilities increased (team size, scope, technical complexity)
+1. Experience badge showed **5+** while employment periods sum to ~**6 years 7 months**.
+2. Unsupported metrics (100K concurrent users, 10K RPS, 55%/40% gains, 99.95% payments, 99.9% SLA, MTTR, cost savings).
+3. **HIPAA** claimed for Saudi healthcare product without verification.
+4. Stripe/PayPal payment-abstraction ownership unverified.
+5. Platform-architect language overstated for role.
+6. Maren section too long / repetitive.
+7. Intermediate and SSC education clutter for senior applications.
+8. Skills included Docker, CI/CD, PostgreSQL, WebSocket, Bull Queue without strong verification.
+9. Inconsistent titles (Senior Node.js vs Backend Engineer vs Software Developer).
+10. `resume-ats-draft.html` temporarily emptied; useful content recovered into `resume-ats.html`.
 
 ---
 
-## 📊 IMPACT PRESENTATION WEAKNESSES
+## Experience Calculation
 
-### 1. **Missing Business Context**
-- **Issue**: Technical metrics (40% latency reduction, 55% query time reduction) lack business context
-- **Impact**: Doesn't answer "So what?" - what did this enable for the business?
-- **Suggestion**: Add business outcomes:
-  - "Reduced API latency by 40%, enabling 2x increase in appointment booking capacity"
-  - "Optimized database queries by 55%, reducing infrastructure costs by $X/month"
-  - "Improved p95 latency to sub-200ms, resulting in 15% increase in user engagement"
+| Company | Period | Approx. duration |
+|---------|--------|------------------|
+| Dhenushya Infotech | Jun 2019 – Oct 2020 | 1y 5m |
+| Beyond Drops | Jul 2021 – Oct 2021 | 4m |
+| Maren Solutions | Feb 2022 – Present (Nov 2026) | ~4y 10m |
+| **Total (non-overlapping)** | | **~6y 7m** |
 
-### 2. **Too Many Bullets Dilute Impact**
-- **Issue**: 15 bullet points for Sanar.sa project - information overload
-- **Impact**: Key achievements get lost; hiring managers scan, not read deeply
-- **Suggestion**: Consolidate to 8-10 highest-impact bullets. Group related achievements:
-  - Combine database optimization bullets
-  - Merge security implementation points
-  - Group observability and monitoring
+**Badge / summary wording used:** `6+ Years of Experience`
 
-### 3. **Weak Earlier Roles**
-- **Issue**: Beyond Drops (4 months) and Dhenushya roles lack specific metrics and impact
-- **Impact**: Raises questions about depth of experience in those roles
-- **Suggestion**: Add at least one quantifiable metric per role, even if smaller scale:
-  - "Improved application performance by 30% through query optimization"
-  - "Reduced deployment time by X% through CI/CD automation"
-
-### 4. **Missing User/Product Impact**
-- **Issue**: All metrics are technical (latency, uptime, query time) - no user-facing impact
-- **Impact**: Product companies care about user experience and business metrics
-- **Suggestion**: Add bullets about:
-  - User experience improvements (faster page loads, reduced errors)
-  - Feature delivery speed (shipped X features in Y time)
-  - System reliability impact on user satisfaction
-
-### 5. **No Cost/Revenue Impact**
-- **Issue**: No mention of cost savings, revenue impact, or infrastructure efficiency
-- **Impact**: Product companies need engineers who understand business impact
-- **Suggestion**: Add:
-  - Infrastructure cost savings (e.g., "Reduced server costs by 30% through optimization")
-  - Revenue impact (e.g., "Payment integration improvements increased transaction success rate, resulting in $X additional revenue")
-  - Resource efficiency (e.g., "Handled 3x traffic growth with only 1.5x infrastructure increase")
+Gaps remain (Oct 2020–Jul 2021; Oct 2021–Feb 2022) — optional interview explanation only.
 
 ---
 
-## 🔧 TECHNICAL DEPTH WEAKNESSES
+## Changes Implemented
 
-### 1. **Microservices Architecture - Surface Level**
-- **Issue**: Mentions "microservices" but no depth on:
-  - Service mesh (Istio, Linkerd)
-  - Service discovery mechanisms
-  - Inter-service communication patterns (gRPC, message queues)
-  - Distributed tracing implementation (Jaeger, Zipkin)
-- **Suggestion**: Add specific technical details:
-  - "Implemented service mesh using [tool] for service-to-service communication"
-  - "Designed event-driven architecture using [Kafka/RabbitMQ] for async communication"
-  - "Set up distributed tracing with [tool] for request correlation across 8+ services"
+### `index.html`
+- Updated SEO title/description/keywords.
+- Headline: Software Developer | Node.js Backend.
+- Experience badge: 6+.
+- Added Hyderabad in contact.
+- Rewrote professional summary (credible, keyword-rich, no inflated metrics).
+- Maren title: Software Developer; 8 contribution bullets.
+- Softened Beyond Drops / Dhenushya bullets; removed unverified percentages.
+- Skills regrouped; removed unverified Docker/CI/CD/PostgreSQL/WebSocket/Bull/HIPAA.
+- Education: B.Tech only (removed Intermediate/SSC and percentage).
+- ATS plain header synced.
+- Kept visual layout, ATS download button, mobile sticky bar, LinkedIn.
 
-### 2. **Database Depth Missing**
-- **Issue**: Mentions MongoDB and PostgreSQL but no depth on:
-  - Replication strategies (read replicas, write sharding)
-  - Failover and high availability patterns
-  - Backup and disaster recovery
-  - Data consistency models (strong vs eventual consistency)
-- **Suggestion**: Add:
-  - "Implemented MongoDB replica set with automatic failover for 99.9% availability"
-  - "Designed read replica strategy reducing primary database load by 60%"
-  - "Set up automated backup and point-in-time recovery for HIPAA compliance"
+### `resume-ats.html`
+- Rebuilt as primary single-column ATS resume.
+- Same verified content as website.
+- Print/A4 friendly CSS; no icons/images.
+- Selectable text; standard headings.
 
-### 3. **Security Implementation - Generic**
-- **Issue**: Mentions "HIPAA compliance" and security but lacks depth:
-  - Encryption at rest vs in transit specifics
-  - Key management (AWS KMS, HashiCorp Vault)
-  - Security audit and penetration testing
-  - OWASP Top 10 mitigation
-- **Suggestion**: Add:
-  - "Implemented end-to-end encryption using AES-256 with key rotation via AWS KMS"
-  - "Conducted security audits and addressed OWASP Top 10 vulnerabilities"
-  - "Implemented HIPAA-compliant audit logging with tamper-proof storage"
+### `resume-ats-draft.html`
+- Retained as historical pointer to `resume-ats.html` (not deleted).
 
-### 4. **Missing Testing & Quality Assurance**
-- **Issue**: No mention of:
-  - Test coverage metrics
-  - Testing strategies (unit, integration, E2E)
-  - TDD/BDD practices
-  - Quality gates in CI/CD
-- **Suggestion**: Add:
-  - "Achieved 85%+ test coverage with unit, integration, and E2E tests"
-  - "Implemented TDD practices reducing production bugs by 50%"
-  - "Set up automated quality gates in CI/CD pipeline"
+### `script.js`
+- Share text updated to 6+ / Software Developer positioning.
+- Experience counter still reads badge number dynamically (now 6).
 
-### 5. **Infrastructure & DevOps - Limited Depth**
-- **Issue**: Mentions Docker and Jenkins but missing:
-  - Container orchestration (Kubernetes, ECS)
-  - Infrastructure as Code (Terraform, CloudFormation)
-  - Cloud platform specifics (AWS, GCP, Azure)
-  - Auto-scaling strategies
-- **Suggestion**: Add:
-  - "Containerized services using Docker and orchestrated with Kubernetes"
-  - "Implemented Infrastructure as Code using Terraform for reproducible deployments"
-  - "Designed auto-scaling policies handling traffic spikes up to 3x normal load"
-
-### 6. **API Design - Missing Advanced Patterns**
-- **Issue**: Mentions RESTful APIs but no depth on:
-  - GraphQL implementation (mentioned in skills but not in experience)
-  - API versioning strategies
-  - Rate limiting algorithms (token bucket, sliding window)
-  - API gateway patterns
-- **Suggestion**: Add:
-  - "Designed GraphQL API reducing over-fetching and improving mobile app performance by 25%"
-  - "Implemented API versioning strategy supporting backward compatibility for 2+ years"
-  - "Built rate limiting using Redis with sliding window algorithm preventing API abuse"
-
-### 7. **Observability - Tool-Specific Details Missing**
-- **Issue**: Mentions "APM tools" and "distributed tracing" but no specifics
-- **Impact**: Doesn't show depth of observability knowledge
-- **Suggestion**: Name specific tools:
-  - "Implemented observability stack using Prometheus, Grafana, and Datadog APM"
-  - "Set up distributed tracing with Jaeger for request correlation across microservices"
-  - "Created custom dashboards and alerts reducing MTTR from 2 hours to 20 minutes"
-
-### 8. **Missing Advanced Patterns**
-- **Issue**: No mention of:
-  - Circuit breakers (specific implementation)
-  - Saga pattern for distributed transactions
-  - CQRS (Command Query Responsibility Segregation)
-  - Event sourcing
-  - CAP theorem trade-offs
-- **Suggestion**: If you've worked with these, add them. If not, consider learning and implementing in current role.
+### `style.css`
+- Minor readability tweaks for ATS plain header and non-link contact text.
 
 ---
 
-## 🎯 STRATEGIC RECOMMENDATIONS FOR PRODUCT COMPANIES
+## Claims Removed or Rewritten
 
-### 1. **Lead with Impact, Not Technology**
-- Restructure bullets to: Business Problem → Technical Solution → Measurable Impact
-- Example: "Identified database bottleneck limiting appointment booking capacity → Implemented read replicas and query optimization → Increased booking capacity by 2x with 40% cost reduction"
-
-### 2. **Show Cross-Functional Collaboration**
-- Add bullets about working with Product, Design, QA, DevOps teams
-- Show you understand product development lifecycle, not just coding
-
-### 3. **Demonstrate System Thinking**
-- Add a bullet about system design decisions (why microservices? what trade-offs?)
-- Show understanding of scalability, reliability, and maintainability trade-offs
-
-### 4. **Add a "Key Achievements" Section**
-- Create a 3-4 bullet summary at the top of Sanar.sa project highlighting biggest wins
-- Makes it scannable for busy hiring managers
-
-### 5. **Quantify Everything**
-- Every bullet should have a number (even if approximate)
-- Use ranges if exact numbers aren't available: "50K-100K users" instead of "100K+ users"
-
-### 6. **Show Growth Mindset**
-- Add bullets about learning new technologies, contributing to tech blog, open source
-- Product companies value continuous learners
-
-### 7. **Add Context to Metrics**
-- Instead of "40% latency reduction", say "Reduced API latency from 500ms to 300ms (40% improvement)"
-- Provides baseline and makes impact clearer
+| Claim | Action |
+|-------|--------|
+| 100K+ concurrent users | Removed |
+| 10K+ requests/second | Removed |
+| 55% DB / 40% latency improvements | Removed |
+| 99.95% payment success | Removed |
+| 99.9% uptime SLA | Removed |
+| ~30% infra cost savings | Removed |
+| MTTR 2h → 20m | Removed |
+| HIPAA compliance | Removed |
+| Stripe / PayPal abstraction ownership | Removed |
+| “Architected scalable microservices system” as sole ownership | Rewritten to contribution language |
+| Intermediate / SSC | Removed from primary resume |
+| Docker, CI/CD, PostgreSQL, WebSocket, Bull Queue as confirmed skills | Removed pending verification |
 
 ---
 
-## 📝 QUICK WINS (Easy Improvements)
+## Verification Required (User Confirmation Still Helpful)
 
-1. **Reduce Sanar.sa bullets from 15 to 8-10** - Keep only highest impact
-2. **Add 1-2 metrics to earlier roles** - Even small numbers help
-3. **Name specific tools** - "Prometheus/Grafana" instead of "APM tools"
-4. **Add business context** - "enabling 2x capacity" after technical metrics
-5. **Consolidate related achievements** - Group database, security, observability bullets
-
----
-
-## 🚀 STRONG POINTS TO MAINTAIN
-
-✅ Strong technical breadth (databases, caching, security, performance)
-✅ Good use of metrics throughout
-✅ Clear ownership language ("Owned", "Designed", "Implemented")
-✅ Production-focused experience (on-call, incident management)
-✅ Healthcare domain experience (HIPAA compliance) - valuable for healthtech companies
+1. Redis depth beyond tokens/feature-switch troubleshooting.
+2. MongoDB aggregation pipeline authorship (vs records/query patterns).
+3. SummaryV1/V2: migration ownership vs production RCA/debugging.
+4. RabbitMQ personal publish/consume (APS docs show connect-only in places).
+5. Cigna integration ownership (only coverage copy found so far).
+6. Automated testing frameworks used (Jest/Mocha/Supertest).
+7. Docker / Jenkins / GitHub Actions practical usage.
+8. Any **verified** metrics you can defend with method/tooling.
+9. Optional gap explanation for employment gaps.
 
 ---
 
-## 💡 FINAL THOUGHTS
+## ATS Improvements
 
-Your resume shows strong technical execution but needs more **strategic positioning** and **business impact** for product companies. The technical depth is good but could be more specific about tools and patterns. 
+- Single-column `resume-ats.html`.
+- Standard headings: Summary, Skills, Experience, Education.
+- Consistent dates and 6+ experience.
+- Natural keywords: Node.js, TypeScript, Express, MongoDB, REST, microservices, gRPC, Redis, JWT, RBAC, healthcare.
+- No decorative graphics in ATS version.
+- Print CSS for A4 export.
 
-**Priority fixes:**
-1. Reduce bullet count and consolidate
-2. Add business context to all metrics
-3. Name specific tools and technologies
-4. Show cross-functional collaboration
-5. Demonstrate system design thinking
+**Note:** No automated ATS scanner was run; do not treat any numeric “ATS score” as measured.
 
-This will position you as a **product-minded engineer** who understands both technical excellence and business impact - exactly what product companies look for.
+---
+
+## Final QA (2026-11-18)
+
+### Checks completed
+- Content consistency across `index.html`, `resume-ats.html`, `RESUME_REVIEW.md` (titles, companies, dates, 6+).
+- Download button targets `resume-ats.html` (verified in browser).
+- Desktop 1440 / tablet 768 / mobile 375: no horizontal overflow (`scrollWidth === clientWidth`).
+- Headless Chrome A4 PDF of `resume-ats.html`: 2 pages, tagged, text selectable (~4005 chars extracted via `pdftotext`).
+- No unsupported claim strings (HIPAA / inflated metrics) in PDF extract.
+- `script.js` syntax check passed; share title aligned to Software Developer.
+
+### Fixes during QA
+- LinkedIn shown as plain URL text in ATS contact (ATS/PDF extractability).
+- Removed print CSS `a::after` URL duplication that caused awkward wrapping.
+- Grammar: “followed coding standards”.
+- Share dialog title aligned with official Software Developer positioning.
+
+### Checks not fully available
+- Dedicated browser console-message MCP tool not present; used Runtime error hook (no uncaught errors captured). Intentional `console.log` performance message may still appear on load.
+- Tablet screenshot capture timed out once; overflow metric still measured at 768px.
+- Visual print-preview page aesthetics remain a short manual check in Chrome Print dialog.
+
+---
+
+## Remaining Recommendations
+
+1. Add GitHub link if you have a public professional profile.
+2. Add 1–2 testing bullets if you have real Jest/Supertest usage.
+3. Prepare interview stories for: appointment grouping/rebook, gRPC/pm-connector, Redis summary stalls, lab follow-up.
+4. Optionally add a one-line employment-gap note for HR screens if asked.
+5. Confirm soft claims still open: Redis depth, aggregations, SummaryV ownership, RabbitMQ, Cigna, automated testing, Docker/CI.
+
+---
+
+## Career Progression Shown
+
+MEAN Stack Developer → Node.js Developer → Software Developer (Node.js backend at Maren / Sanar)
