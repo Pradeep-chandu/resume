@@ -90,27 +90,11 @@
         });
     }
 
-    // Dynamic typing effect for profile title
+    // Keep profile title fully visible (no typing animation — avoids incomplete title on load)
     function initTypingEffect() {
         const titleElement = document.querySelector('.profile-title');
         if (!titleElement) return;
-        
-        const text = titleElement.textContent;
-        titleElement.textContent = '';
-        titleElement.classList.add('typing');
-        
-        let i = 0;
-        const typeInterval = setInterval(() => {
-            if (i < text.length) {
-                titleElement.textContent += text.charAt(i);
-                i++;
-            } else {
-                clearInterval(typeInterval);
-                setTimeout(() => {
-                    titleElement.classList.remove('typing');
-                }, 500);
-            }
-        }, 100);
+        titleElement.classList.remove('typing');
     }
 
     // Animated counter for experience badge
@@ -312,8 +296,8 @@
     window.shareResume = function() {
         return safeExecute(() => {
             const shareData = {
-                title: 'B. Pradeep Chandu - Senior Node.js Developer Resume',
-                text: 'Check out my resume - Senior Node.js Developer with 5+ years of experience',
+                title: 'B. Pradeep Chandu - Software Developer | Node.js Backend Resume',
+                text: 'Check out my resume - Software Developer | Node.js Backend | 6+ years of experience',
                 url: window.location.href
             };
 
