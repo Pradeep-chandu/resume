@@ -1,0 +1,7 @@
+RESUME_REVIEW.md
+*.md
+!README.md
+Procfile
+resume-ats-draft.html
+node_modules/
+.DS_Store
