@@ -954,6 +954,12 @@ ul {
   font-size: 1rem;
 }
 
+.case-grid--summary .case-step--decision {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-bottom: 0;
+}
+
 .case-toggle {
   display: flex;
   align-items: center;

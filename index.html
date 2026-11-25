@@ -258,6 +258,10 @@
                             <h4>Verified outcomes</h4>
                             <p>All 125 steps and 19 pipelines reimplemented in native TypeScript, with 66 reusable rules and an automated comparison suite completed before rollout review.</p>
                         </section>
+                        <section class="case-step case-step--decision reveal">
+                            <h4>Decision and trade-off</h4>
+                            <p>The flow was reimplemented in its original step order, with the same request validation, error handling, and response contracts. That kept each migrated step comparable with the legacy behavior, and web and mobile clients did not change.</p>
+                        </section>
                     </div>
 
                     <details class="case-details" id="caseDetails" open>
@@ -272,11 +276,11 @@
                                 <p>125 ordered processing steps, 19 MongoDB aggregation pipelines with English and Arabic responses, and rules shared across bookings, prescriptions, and documents.</p>
                             </section>
                             <section class="case-step reveal">
-                                <h4><span class="case-num" aria-hidden="true">02</span>Architectural approach</h4>
+                                <h4><span class="case-num" aria-hidden="true">02</span>Architectural decision</h4>
                                 <p>Reimplemented the flow step by step in TypeScript and extracted reusable modules: 44 shared business rules and 22 prescription and document rules.</p>
                             </section>
                             <section class="case-step reveal">
-                                <h4><span class="case-num" aria-hidden="true">03</span>Implementation strategy</h4>
+                                <h4><span class="case-num" aria-hidden="true">03</span>Implementation approach</h4>
                                 <p>Kept the original step order, request validation, and error handling, so each migrated step could be compared directly with the legacy behavior.</p>
                             </section>
                             <section class="case-step reveal">
@@ -288,7 +292,7 @@
                                 <p>Web and mobile response contracts were preserved, so existing clients needed no changes.</p>
                             </section>
                             <section class="case-step reveal">
-                                <h4><span class="case-num" aria-hidden="true">06</span>Regression testing</h4>
+                                <h4><span class="case-num" aria-hidden="true">06</span>Testing strategy</h4>
                                 <p>36 HTTP fixtures, 32 production-build pipeline comparisons, and 3,300+ helper and document comparisons against the legacy implementation.</p>
                             </section>
                         </div>
